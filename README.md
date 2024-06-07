@@ -18,7 +18,7 @@ to Cargo.toml.
 The profiling object is only created if its log level is enabled for the current active level.
 
 ```rust
-use logdrop::*;
+use proflogger::*;
 
 #[profile]
 fn func1() {

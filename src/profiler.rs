@@ -1,14 +1,15 @@
 use std::time::Instant;
 
-pub use logdrop_proc::profile;
-
-pub struct LogDropProfiler {
+/// Starts a timer when created which logs the elapsed lifetime when it is dropped.
+///
+/// While this can be created and used manually, the [`proflogger_proc::profile`] macro from proflogger-proc is the more ergonomic method of use.
+pub struct AutoLogger {
     name: &'static str,
     start: Instant,
     level: log::Level,
 }
 
-impl LogDropProfiler {
+impl AutoLogger {
     #[must_use]
     pub fn new(name: &'static str, level: log::Level) -> Self {
         Self {
@@ -19,7 +20,7 @@ impl LogDropProfiler {
     }
 }
 
-impl Drop for LogDropProfiler {
+impl Drop for AutoLogger {
     fn drop(&mut self) {
         log::log!(
             self.level,
@@ -33,9 +34,15 @@ impl Drop for LogDropProfiler {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::profile;
 
     #[test]
     fn test_macro() {
+        // These tests have to be tested manually for now.
+        // First, setting RUST_LOG=trace should show all functions print profiles.
+        // Setting RUST_LOG=warn should show only function2.
+        // Running cargo test --release should not show any.
+
         env_logger::init();
 
         #[profile]

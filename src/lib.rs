@@ -1,4 +1,5 @@
 #![doc = include_str!("../README.md")]
+mod profiler;
 
-pub use logdrop::profile;
-pub use logdrop::LogDropProfiler;
+pub use profiler::AutoLogger;
+pub use proflogger_proc::profile;

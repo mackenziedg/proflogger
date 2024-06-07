@@ -1,16 +1,19 @@
 [package]
-name = "logdrop_proc"
+name = "proflogger_proc"
+description = "Implements a macro to enable automatic function profiling. Should be used with proflogger."
 version = "0.1.0"
 edition = "2021"
+authors = ["Mackenzie Gray <me@mackenziedgray.com>"]
+license-file = "LICENSE.md"
+keywords = ["profile", "log"]
+categories = ["date-and-time"]
+repository = "https://github.com/mackenziedg/proflogger/tree/main/proc"
 
 [lib]
 proc-macro = true
 
 [dependencies]
 log = "0.4.21"
-
-[dev-dependencies]
-env_logger = "0.11.3"
 
 [lints.clippy]
 complexity = "warn"

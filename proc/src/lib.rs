@@ -1,5 +1,6 @@
 use proc_macro::{Delimiter, TokenStream, TokenTree};
 
+/// Log out the run time of the annotated function using a `AutoLogger`.
 #[proc_macro_attribute]
 pub fn profile(args: TokenStream, input: TokenStream) -> TokenStream {
     // Input should look like
@@ -70,7 +71,7 @@ pub fn profile(args: TokenStream, input: TokenStream) -> TokenStream {
         "{function_defs} {function_name}{function_heading} {{
             #[cfg(debug_assertions)]
             let _profiler_{function_name} = if log::log_enabled!({log_level}) {{
-                Some(LogDropProfiler::new(\"{function_name}\", {log_level}))
+                Some(AutoLogger::new(\"{function_name}\", {log_level}))
             }} else {{
                 None
             }};

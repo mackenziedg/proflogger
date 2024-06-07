@@ -1,20 +1,21 @@
 [package]
 name = "proflogger"
+description = "Implements a macro to enable automatic function profiling."
 version = "0.1.0"
 edition = "2021"
 authors = ["Mackenzie Gray <me@mackenziedgray.com>"]
 readme = "README.md"
-license = "LICENSE.md"
+license-file = "LICENSE.md"
 keywords = ["profile", "log"]
+repository = "https://github.com/mackenziedg/proflogger"
 categories = ["date-and-time"]
-include = ["/logdrop/", "/proc/", "/src/", "*.md"]
 
 [dependencies]
-logdrop= {path="./logdrop"}
-logdrop_proc = {path="./proc"}
+log = "0.4.21"
+proflogger_proc = "0.1.0"
 
 [dev-dependencies]
-log = "0.4.21"
+env_logger = "0.11.3"
 
 [lints.clippy]
 complexity = "warn"
