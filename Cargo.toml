@@ -2,13 +2,16 @@
 name = "proflogger"
 version = "0.1.0"
 edition = "2021"
+authors = ["Mackenzie Gray <me@mackenziedgray.com>"]
+readme = "README.md"
 license = "LICENSE.md"
-keywords = ["profiling", "logging"]
+keywords = ["profile", "log"]
 categories = ["date-and-time"]
+include = ["/logdrop/", "/proc/", "/src/", "*.md"]
 
 [dependencies]
-logdrop= {path="logdrop"}
-logdrop_proc = {path="proc"}
+logdrop= {path="./logdrop"}
+logdrop_proc = {path="./proc"}
 
 [dev-dependencies]
 log = "0.4.21"
