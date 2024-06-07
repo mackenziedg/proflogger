@@ -10,7 +10,7 @@ By default, this is not true in release builds, but can be enabled by adding
 
 ```ignore
 [profile.release]
-debug=True
+debug-assertions=true
 ```
 
 to Cargo.toml.
