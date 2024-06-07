@@ -1,0 +1,18 @@
+[package]
+name = "logdrop"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+logdrop_proc = {path="../proc"}
+log = "0.4.21"
+
+[dev-dependencies]
+env_logger = "0.11.3"
+
+[lints.clippy]
+complexity = "warn"
+pedantic = "warn"
+perf = "warn"
+style = "warn"
+suspicious = "warn"

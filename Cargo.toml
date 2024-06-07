@@ -1,0 +1,18 @@
+[package]
+name = "proflogger"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+logdrop= {path="logdrop"}
+logdrop_proc = {path="proc"}
+
+[dev-dependencies]
+log = "0.4.21"
+
+[lints.clippy]
+complexity = "warn"
+pedantic = "warn"
+perf = "warn"
+style = "warn"
+suspicious = "warn"
