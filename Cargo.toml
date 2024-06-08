@@ -1,18 +1,18 @@
 [package]
 name = "proflogger"
 description = "Implements a macro to enable automatic function profiling."
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Mackenzie Gray <me@mackenziedgray.com>"]
 readme = "README.md"
-license-file = "LICENSE.md"
+license= "MIT"
 keywords = ["profile", "log"]
 repository = "https://github.com/mackenziedg/proflogger"
 categories = ["date-and-time"]
 
 [dependencies]
 log = "0.4.21"
-proflogger_proc = "0.1.0"
+proflogger_proc = "0.1.1"
 
 [dev-dependencies]
 env_logger = "0.11.3"

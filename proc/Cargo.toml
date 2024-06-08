@@ -1,10 +1,10 @@
 [package]
 name = "proflogger_proc"
 description = "Implements a macro to enable automatic function profiling. Should be used with proflogger."
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Mackenzie Gray <me@mackenziedgray.com>"]
-license-file = "LICENSE.md"
+license-file = "MIT"
 keywords = ["profile", "log"]
 categories = ["date-and-time"]
 repository = "https://github.com/mackenziedg/proflogger/tree/main/proc"
