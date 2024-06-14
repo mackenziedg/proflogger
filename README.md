@@ -18,7 +18,7 @@ to Cargo.toml.
 The profiling object is only created if its log level is enabled for the current active level.
 
 ```rust
-use proflogger::*;
+use proflogger::profile;
 
 #[profile]
 fn func1() {
@@ -32,7 +32,7 @@ fn func1() {
 // By default, the log level is set to `log::level::Trace`,
 // but this can be customized like
 
-#[profile("Error")]
+#[profile(Error)]
 fn expensive_function(arg1: usize, arg2: usize) -> usize {
     (arg1..arg2).map(|a| a * a).sum()
 }

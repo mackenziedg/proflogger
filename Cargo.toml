@@ -5,17 +5,18 @@ version = "0.1.2"
 edition = "2021"
 authors = ["Mackenzie Gray <me@mackenziedgray.com>"]
 readme = "README.md"
-license= "MIT"
+license = "MIT"
 keywords = ["profile", "log"]
 repository = "https://github.com/mackenziedg/proflogger"
 categories = ["date-and-time"]
 
 [dependencies]
 log = "0.4.21"
-proflogger_proc = "0.1.1"
+proflogger_proc = "0.1.2"
 
 [dev-dependencies]
 env_logger = "0.11.3"
+pollster = "0.3.0"
 
 [lints.clippy]
 complexity = "warn"

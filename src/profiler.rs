@@ -33,8 +33,8 @@ impl Drop for AutoLogger {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
-    use crate::profile;
+    use crate as proflogger;
+    use proflogger::profile;
 
     #[test]
     fn test_macro() {
@@ -51,7 +51,7 @@ mod tests {
             println!("{a}");
         }
 
-        #[profile("Error")]
+        #[profile(Error)]
         fn test_profiled_function2() {
             let a = 0;
             println!("{a}");
@@ -70,7 +70,18 @@ mod tests {
         }
 
         #[profile]
+        #[must_use]
         fn test_profiled_function5(a: usize) -> usize {
+            (0..a).sum()
+        }
+
+        #[profile]
+        async fn test_profiled_function6(a: usize) -> usize {
+            async fn f(n: usize) {
+                log::error!("{n}");
+            }
+            f(a).await;
+
             (0..a).sum()
         }
 
@@ -78,6 +89,7 @@ mod tests {
         test_profiled_function2();
         test_profiled_function3(0);
         test_profiled_function4(0);
-        test_profiled_function5(1_000_000);
+        let _ = test_profiled_function5(1_000_000);
+        pollster::block_on(test_profiled_function6(10));
     }
 }
